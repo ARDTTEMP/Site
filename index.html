@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRAC USA - Building Resources Across Communities</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://bracusa.org/wp-content/uploads/2021/03/BRAC-USA-Homepage-Hero-Image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Top Bar -->
+    <div class="bg-blue-900 text-white text-sm py-2 px-4 flex justify-between items-center">
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-200"><i class="fas fa-search mr-1"></i> Search</a>
+            <a href="#" class="hover:text-blue-200"><i class="fas fa-user mr-1"></i> My Account</a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-blue-200">Careers</a>
+            <a href="#" class="hover:text-blue-200">Contact</a>
+            <a href="#" class="hover:text-blue-200">Newsletter</a>
+            <button class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-4 py-1 rounded">Donate</button>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-blue-900">BRAC USA</a>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+            <div class="dropdown relative">
+                <button class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                    Who We Are <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden bg-white mt-2 py-2 w-48 shadow-lg rounded z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">About BRAC</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Our Approach</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Leadership</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Financials</a>
+                </div>
+            </div>
+            
+            <div class="dropdown relative">
+                <button class="text-blue-900 hover:text-blue-700 font-medium flex items-center">
+                    What We Do <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                </button>
+                <div class="dropdown-menu absolute hidden bg-white mt-2 py-2 w-48 shadow-lg rounded z-10">
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Programs</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Impact</a>
+                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-100">Research</a>
+                </div>
+            </div>
+            
+            <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">Where We Work</a>
+            <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">Get Involved</a>
+            <a href="#" class="text-blue-900 hover:text-blue-700 font-medium">News</a>
+        </div>
+        
+        <button class="md:hidden text-blue-900">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-image text-white py-32 px-6 md:px-16">
+        <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Empowering people to realize their potential</h1>
+            <p class="text-lg mb-8">BRAC is a global leader in creating opportunities at scale to help people lift themselves out of poverty.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-3 rounded">Donate Now</button>
+                <button class="bg-transparent hover:bg-blue-800 text-white font-bold px-6 py-3 border border-white rounded">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="bg-blue-800 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Our Global Impact</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">100M+</div>
+                    <div class="text-lg">People Reached</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">11</div>
+                    <div class="text-lg">Countries</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">40+</div>
+                    <div class="text-lg">Years of Experience</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2">90%</div>
+                    <div class="text-lg">Program Expenses</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Approach -->
+    <div class="bg-white py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Our Approach</h2>
+            <p class="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+                BRAC takes a holistic approach to alleviating poverty by addressing its many dimensions through integrated, community-based programs.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="impact-card bg-gray-50 p-8 rounded-lg transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-hands-helping text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Ultra-Poor Graduation</h3>
+                    <p class="text-gray-700">
+                        A comprehensive approach to help the poorest households build sustainable livelihoods and break the cycle of poverty.
+                    </p>
+                </div>
+                
+                <div class="impact-card bg-gray-50 p-8 rounded-lg transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Education</h3>
+                    <p class="text-gray-700">
+                        Providing quality education to children who are out of school or at risk of dropping out through innovative models.
+                    </p>
+                </div>
+                
+                <div class="impact-card bg-gray-50 p-8 rounded-lg transition duration-300">
+                    <div class="text-blue-900 mb-4">
+                        <i class="fas fa-hand-holding-usd text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Microfinance</h3>
+                    <p class="text-gray-700">
+                        Offering financial services to empower people, especially women, to build businesses and improve their lives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Story -->
+    <div class="bg-gray-100 py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://bracusa.org/wp-content/uploads/2021/03/featured-story.jpg" alt="Featured Story" class="rounded-lg shadow-lg w-full">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-blue-900 mb-6">Featured Story: Empowering Women in Bangladesh</h2>
+                <p class="text-gray-700 mb-6">
+                    Meet Rina, a woman who transformed her life through BRAC's Ultra-Poor Graduation program. With training, assets, and ongoing support, she built a successful poultry business that now supports her entire family.
+                </p>
+                <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded">Read More Stories</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- News & Updates -->
+    <div class="bg-white py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">News & Updates</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="news-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+                    <img src="https://bracusa.org/wp-content/uploads/2021/03/news-1.jpg" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-blue-900 text-sm mb-2">March 15, 2023</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">BRAC Ranked #1 NGO in the World</h3>
+                        <p class="text-gray-700 mb-4">
+                            BRAC has been ranked as the top NGO in the world by NGO Advisor for the sixth consecutive year.
+                        </p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="news-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+                    <img src="https://bracusa.org/wp-content/uploads/2021/03/news-2.jpg" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-blue-900 text-sm mb-2">February 28, 2023</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">New Education Initiative Launched</h3>
+                        <p class="text-gray-700 mb-4">
+                            BRAC launches a new digital education platform to reach children in remote areas affected by school closures.
+                        </p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="news-card bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm transition duration-300">
+                    <img src="https://bracusa.org/wp-content/uploads/2021/03/news-3.jpg" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-blue-900 text-sm mb-2">January 10, 2023</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Climate Resilience Program Expands</h3>
+                        <p class="text-gray-700 mb-4">
+                            BRAC expands its climate resilience programs to help vulnerable communities adapt to changing weather patterns.
+                        </p>
+                        <a href="#" class="text-blue-900 font-medium hover:underline">Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded">View All News</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="bg-blue-900 text-white py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Stay Connected</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                Subscribe to our newsletter to receive updates on our programs, impact stories, and opportunities to get involved.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded text-gray-900">
+                <button class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-6 py-3 rounded">Subscribe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">BRAC USA</h3>
+                <p class="text-gray-400 mb-4">
+                    Building Resources Across Communities
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">About</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Our Approach</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Leadership</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Financials</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Programs</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Ultra-Poor Graduation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Education</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Microfinance</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Health</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Agriculture</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Get Involved</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white">Donate</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Fundraise</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Volunteer</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Partnerships</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Events</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                © 2023 BRAC USA. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const mobileMenu = document.querySelector('.md\\:flex');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+                mobileMenu.classList.toggle('flex-col');
+                mobileMenu.classList.toggle('absolute');
+                mobileMenu.classList.toggle('bg-white');
+                mobileMenu.classList.toggle('w-full');
+                mobileMenu.classList.toggle('left-0');
+                mobileMenu.classList.toggle('top-24');
+                mobileMenu.classList.toggle('p-6');
+                mobileMenu.classList.toggle('shadow-lg');
+                mobileMenu.classList.toggle('z-10');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

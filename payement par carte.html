@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Sécurisé</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-input {
+            background: repeating-linear-gradient(90deg, #ededed 0, #ededed 1ch, transparent 0, transparent 1.5ch) 0 100%/100% 2px no-repeat;
+            letter-spacing: 0.5ch;
+        }
+        .card-input:focus {
+            background: repeating-linear-gradient(90deg, #3b82f6 0, #3b82f6 1ch, transparent 0, transparent 1.5ch) 0 100%/100% 2px no-repeat;
+        }
+        .flip-card {
+            perspective: 1000px;
+        }
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        .flip-card.active .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-4xl w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="md:flex">
+            <!-- Article Section -->
+            <div class="md:w-1/2 p-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-20 h-20 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-headphones text-blue-500 text-3xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-2xl font-bold text-gray-800">Casque Audio Premium</h2>
+                        <p class="text-gray-500">Noise Cancelling Pro</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Prix</span>
+                        <span class="font-semibold">€249.99</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Livraison</span>
+                        <span class="font-semibold">Gratuite</span>
+                    </div>
+                    <div class="border-t border-gray-200 my-2"></div>
+                    <div class="flex justify-between text-lg">
+                        <span class="text-gray-800 font-bold">Total</span>
+                        <span class="font-bold text-blue-600">€249.99</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Description</h3>
+                    <p class="text-gray-600">Casque audio sans fil avec réduction de bruit active, autonomie de 30 heures, qualité sonore haute résolution et confort optimal pour un usage prolongé.</p>
+                </div>
+            </div>
+            
+            <!-- Payment Section -->
+            <div class="md:w-1/2 bg-gray-50 p-8">
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">Paiement Sécurisé</h1>
+                
+                <!-- Payment Methods -->
+                <div class="mb-6">
+                    <div class="flex space-x-4 mb-4">
+                        <button class="payment-method active px-4 py-2 rounded-lg border border-blue-500 bg-blue-50 text-blue-600">
+                            <i class="fab fa-cc-stripe mr-2"></i> Carte Bancaire
+                        </button>
+                        <button class="payment-method px-4 py-2 rounded-lg border border-gray-300 hover:border-blue-500">
+                            <i class="fab fa-paypal mr-2"></i> PayPal
+                        </button>
+                    </div>
+                    
+                    <!-- Credit Card Form -->
+                    <div id="credit-card-form" class="space-y-4">
+                        <!-- Card Preview -->
+                        <div class="flip-card mb-4" id="card-preview">
+                            <div class="flip-card-inner">
+                                <!-- Front of Card -->
+                                <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-lg">
+                                    <div class="flex justify-between items-start mb-8">
+                                        <div>
+                                            <p class="text-xs opacity-80">Nom sur la carte</p>
+                                            <p id="card-name-preview" class="font-medium">NOM PRENOM</p>
+                                        </div>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" class="h-8" alt="Visa">
+                                    </div>
+                                    <div>
+                                        <p class="text-xs opacity-80">Numéro de carte</p>
+                                        <p id="card-number-preview" class="text-xl tracking-widest font-mono">•••• •••• •••• ••••</p>
+                                    </div>
+                                    <div class="flex justify-between mt-4">
+                                        <div>
+                                            <p class="text-xs opacity-80">Expiration</p>
+                                            <p id="card-expiry-preview">MM/AA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Back of Card -->
+                                <div class="flip-card-back bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 text-white shadow-lg absolute top-0 left-0 w-full h-full">
+                                    <div class="h-8 bg-black mt-4 mb-6"></div>
+                                    <div class="bg-gray-200 h-8 rounded flex items-center px-3">
+                                        <p id="card-cvc-preview" class="text-gray-800 font-mono ml-auto">•••</p>
+                                    </div>
+                                    <div class="mt-4 text-right">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" class="h-8 inline-block" alt="Visa">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Form -->
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Numéro de carte</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" 
+                                       class="card-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none font-mono">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Nom sur la carte</label>
+                                <input type="text" id="card-name" placeholder="Nom Prénom" 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Date d'expiration</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/AA" 
+                                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Code de sécurité</label>
+                                    <div class="relative">
+                                        <input type="text" id="card-cvc" placeholder="CVC" 
+                                               class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
+                                               onfocus="document.getElementById('card-preview').classList.add('active')"
+                                               onblur="document.getElementById('card-preview').classList.remove('active')">
+                                        <div class="absolute right-3 top-3 text-gray-400 hover:text-gray-600 cursor-pointer" title="3 chiffres au dos de votre carte">
+                                            <i class="fas fa-question-circle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Terms and Payment Button -->
+                <div class="mt-8">
+                    <div class="flex items-start mb-6">
+                        <input type="checkbox" id="terms" class="mt-1">
+                        <label for="terms" class="ml-2 text-sm text-gray-600">
+                            J'accepte les <a href="#" class="text-blue-600 hover:underline">conditions générales</a> et la <a href="#" class="text-blue-600 hover:underline">politique de confidentialité</a>
+                        </label>
+                    </div>
+                    
+                    <button id="pay-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition duration-200 flex items-center justify-center">
+                        <span id="button-text">Payer €249.99</span>
+                        <i class="fas fa-lock ml-2"></i>
+                    </button>
+                    
+                    <div class="mt-4 flex justify-center space-x-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visa/visa-original.svg" class="h-8 opacity-70" alt="Visa">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mastercard/mastercard-original.svg" class="h-8 opacity-70" alt="Mastercard">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" class="h-8 opacity-70" alt="Apple Pay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update card preview in real-time
+        document.getElementById('card-number').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/\D/g, '');
+            let formatted = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            e.target.value = formatted.substring(0, 19);
+            
+            let display = formatted.substring(0, 19) || '•••• •••• •••• ••••';
+            document.getElementById('card-number-preview').textContent = display;
+        });
+        
+        document.getElementById('card-name').addEventListener('input', function(e) {
+            let value = e.target.value.toUpperCase() || 'NOM PRENOM';
+            document.getElementById('card-name-preview').textContent = value;
+        });
+        
+        document.getElementById('card-expiry').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value.substring(0, 5);
+            document.getElementById('card-expiry-preview').textContent = value || 'MM/AA';
+        });
+        
+        document.getElementById('card-cvc').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '').substring(0, 3);
+            e.target.value = value;
+            document.getElementById('card-cvc-preview').textContent = value || '•••';
+        });
+        
+        // Payment method selection
+        document.querySelectorAll('.payment-method').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.payment-method').forEach(btn => btn.classList.remove('active', 'border-blue-500', 'bg-blue-50', 'text-blue-600'));
+                this.classList.add('active', 'border-blue-500', 'bg-blue-50', 'text-blue-600');
+            });
+        });
+        
+        // Payment processing simulation
+        document.getElementById('pay-button').addEventListener('click', function() {
+            const button = this;
+            const buttonText = document.getElementById('button-text');
+            const originalText = buttonText.textContent;
+            
+            if (!document.getElementById('terms').checked) {
+                alert("Veuillez accepter les conditions générales");
+                return;
+            }
+            
+            // Validate card fields
+            const cardNumber = document.getElementById('card-number').value.replace(/\s/g, '');
+            const cardName = document.getElementById('card-name').value.trim();
+            const cardExpiry = document.getElementById('card-expiry').value;
+            const cardCvc = document.getElementById('card-cvc').value;
+            
+            if (!cardNumber || cardNumber.length < 16 || !cardName || !cardExpiry || cardExpiry.length < 5 || !cardCvc || cardCvc.length < 3) {
+                alert("Veuillez remplir tous les champs de la carte correctement");
+                return;
+            }
+            
+            // Simulate payment processing
+            button.disabled = true;
+            buttonText.textContent = "Traitement en cours...";
+            button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            button.classList.add('bg-blue-400');
+            
+            // Simulate API call to Stripe
+            setTimeout(() => {
+                // In a real app, you would call Stripe.js here
+                // For demo purposes, we'll just show a success message
+                buttonText.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Paiement réussi';
+                button.classList.remove('bg-blue-400');
+                button.classList.add('bg-green-500');
+                
+                setTimeout(() => {
+                    alert("Merci pour votre achat ! Votre commande a été passée avec succès.");
+                    // Reset button
+                    button.disabled = false;
+                    buttonText.textContent = originalText;
+                    button.classList.remove('bg-green-500');
+                    button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                }, 1500);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
