@@ -38,6 +38,16 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+        @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        animation: marquee 25s linear infinite;
+    }
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
     </style>
 </head>
 <body class="font-sans">
@@ -80,9 +90,9 @@
                     Ce que nous faisons <i class="fas fa-chevron-down ml-1 text-xs"></i>
                 </button>
                 <div class="dropdown-menu absolute hidden bg-white mt-2 py-2 w-48 shadow-lg rounded z-10">
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Nos programmes</a>
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Resultats</a>
-                    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Recherche</a>
+                    <a href="Nos programmes.html" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Nos programmes</a>
+                    <a href="Resultats.html" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Resultats</a>
+                    <a href="Recherche.html" class="block px-4 py-2 text-gray-800 hover:bg-lime-100">Recherche</a>
                 </div>
             </div>
             
@@ -242,22 +252,31 @@
             </div>
         </div>
     </div>
-
-    <!-- Newsletter -->
-    <div class="bg-lime-900 text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Restez connect&eacute;</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                Souscriver &agrave; notre newsletters pour recevoir l'actualit&eacute; sur nos programmes, nos r&eacute;sultats, et l'opportunit&eacute; de vous engager.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input type="email" placeholder="Votre adresse Email" class="flex-grow px-4 py-3 rounded text-gray-900">
-                <button class="bg-yellow-500 hover:bg-yellow-600 text-lime-900 font-bold px-6 py-3 rounded">Souscrire</button>
+<!-- ===================== NOS PARTENAIRES (Défilement) ===================== -->
+<div class="bg-white py-12 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-10 text-emerald-900">Nos Partenaires</h2>
+        
+        <!-- Défilement des logos -->
+        <div class="relative">
+            <div class="flex animate-marquee whitespace-nowrap gap-12 items-center">
+                <div class="flex items-center gap-12">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=Ministère" alt="Ministère" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=FAO" alt="FAO" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=UNDP" alt="UNDP" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=Univ+Lagos" alt="Université" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=Green+Africa" alt="Green Africa" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=UE" alt="Union Européenne" class="h-10 opacity-75 hover:opacity-100 transition">
+                    
+                    <!-- Double pour un défilement fluide -->
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=Ministère" alt="Ministère" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=FAO" alt="FAO" class="h-10 opacity-75 hover:opacity-100 transition">
+                    <img src="https://via.placeholder.com/140x60/166534/fff?text=UNDP" alt="UNDP" class="h-10 opacity-75 hover:opacity-100 transition">
+                </div>
             </div>
         </div>
     </div>
-
+</div>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -267,11 +286,13 @@
                     Transformons notre environnement ensemble.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/ardttemp" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/ardttemp" class="text-gray-400 hover:text-white"><i class="fab fa-x-twitter></i></a>
                     <!--<a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>-->
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/associationardttemp/" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@ARDTTEMP" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.threads.com/@associationardttemp" class="text-gray-400 hover:text-white"><i class="fab fa-threads"></i></a>
+                    <a href="https://bsky.app/profile/ardttemp.bsky.socialP" class="text-gray-400 hover:text-white"><i class="fab fa-bluesky"></i></a>
                 </div>
             </div>
             
